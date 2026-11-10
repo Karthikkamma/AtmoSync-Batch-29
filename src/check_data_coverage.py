@@ -36,3 +36,8 @@ print(
     .size()
     .tail(10)
 )
+print("\nNumber of unique dates:")
+print(df["Arrival_Date"].dt.date.nunique())
+
+print("\nDates in dataset:")
+print(df["Arrival_Date"].dt.date.value_counts())
