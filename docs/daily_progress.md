@@ -54,3 +54,32 @@ Both datasets contain records for only 10 November 2026. Historical data coverin
 
 ### Status
 Python dataset ingestion preparation and validation completed. Kafka, Snowflake and Superset integration remain pending.
+
+
+## Day 3 — November 12, 2026
+
+### Objective
+Set up Apache Kafka and demonstrate agricultural price data ingestion.
+
+### Work Completed
+- Installed WSL2 with Ubuntu 24.04.
+- Installed and configured Docker Desktop.
+- Created a Docker Compose configuration for Apache Kafka 3.9.1.
+- Started the Kafka broker in Docker.
+- Created the `atmosync-prices` Kafka topic.
+- Installed the `kafka-python` library.
+- Developed `src/kafka_producer.py` to publish JSONL records.
+- Published 12,672 agricultural market price records to Kafka.
+- Verified Kafka topic offsets and successfully consumed three JSON messages.
+
+### Files Created
+- `docker-compose.yml`
+- `src/kafka_producer.py`
+
+### Result
+Successfully demonstrated a local Kafka ingestion pipeline using public agricultural commodity price data.
+
+### Limitations and Next Steps
+- The current dataset contains prices from one date, not historical time-series data.
+- Container IoT sensor simulation and Snowflake ingestion are not yet implemented.
+- Next: build the simulated container telemetry producer and connect the Kafka pipeline to Snowflake.
