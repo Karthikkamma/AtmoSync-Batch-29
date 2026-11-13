@@ -83,3 +83,26 @@ Successfully demonstrated a local Kafka ingestion pipeline using public agricult
 - The current dataset contains prices from one date, not historical time-series data.
 - Container IoT sensor simulation and Snowflake ingestion are not yet implemented.
 - Next: build the simulated container telemetry producer and connect the Kafka pipeline to Snowflake.
+
+
+## Day 4 - November 13, 2026
+
+### Task: IoT Container Telemetry Simulation
+
+- Started the Apache Kafka broker using Docker Compose.
+- Created a new Kafka topic named `atmosync-telemetry`.
+- Developed `src/iot_simulator.py` using Python.
+- Simulated temperature, humidity, and GPS readings for three refrigerated containers.
+- Added timestamps and a `simulated` flag to distinguish synthetic data from real sensor measurements.
+- Published 15 simulated IoT readings to Apache Kafka.
+- Verified Kafka ingestion by consuming 3 messages successfully.
+
+### Result
+
+Successfully implemented and tested the simulated IoT telemetry producer for AtmoSync.
+
+### Next Steps
+
+- Integrate Kafka telemetry streams with Snowflake.
+- Create raw telemetry tables for downstream analytics.
+
