@@ -1,0 +1,17 @@
+# Python environments
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Credentials and private keys
+*.p8
+*.pem
+*.key
+profiles.yml
+
+# dbt generated files
+target/
+dbt_packages/
+logs/
+.env

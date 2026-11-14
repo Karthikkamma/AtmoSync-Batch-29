@@ -1,0 +1,29 @@
+WITH latest_readings AS (
+    SELECT
+        CONTAINER_ID,
+        EVENT_TIMESTAMP,
+        TEMPERATURE_C,
+        HUMIDITY_PERCENT,
+        IS_SIMULATED,
+        ROW_NUMBER() OVER (
+            PARTITION BY CONTAINER_ID
+            ORDER BY EVENT_TIMESTAMP DESC
+        ) AS RN
+    FROM {{ ref('stg_container_telemetry') }}
+)
+
+SELECT
+    CONTAINER_ID,
+    EVENT_TIMESTAMP,
+    TEMPERATURE_C,
+    HUMIDITY_PERCENT,
+    IS_SIMULATED,
+    CASE
+        WHEN TEMPERATURE_C > 15 OR HUMIDITY_PERCENT > 90
+            THEN 'HIGH'
+        WHEN TEMPERATURE_C > 10 OR HUMIDITY_PERCENT > 80
+            THEN 'MEDIUM'
+        ELSE 'LOW'
+    END AS DEMO_SPOILAGE_RISK
+FROM latest_readings
+WHERE RN = 1
