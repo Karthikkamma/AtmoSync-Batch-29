@@ -1,0 +1,54 @@
+
+version: 2
+
+models:
+  - name: stg_container_telemetry
+    description: "Staging model for container climate sensor readings."
+    columns:
+      - name: CONTAINER_ID
+        description: "Identifier of the monitored container."
+        data_tests:
+          - not_null
+
+      - name: TEMPERATURE_C
+        description: "Temperature recorded by the container sensor."
+        data_tests:
+          - not_null
+
+      - name: HUMIDITY_PERCENT
+        description: "Humidity percentage recorded by the container sensor."
+        data_tests:
+          - not_null
+
+      - name: EVENT_TIMESTAMP
+        description: "Timestamp when the container sensor reading was recorded."
+        data_tests:
+          - not_null
+      
+  - name: stg_agricultural_prices
+    description: "Staging model for agricultural market prices."
+    columns:
+      - name: COMMODITY
+        description: "Name of the agricultural commodity."
+        data_tests:
+          - not_null
+  
+      - name: MARKET
+        description: "Market where the agricultural commodity price was recorded."
+        data_tests:
+          - not_null
+      
+      - name: STATE
+        description: "State where the agricultural market is located."
+        data_tests:
+          - not_null
+      
+      - name: MODAL_PRICE
+        description: "Most commonly reported market price for the commodity."
+        data_tests:
+          - not_null
+
+
+
+          
+
