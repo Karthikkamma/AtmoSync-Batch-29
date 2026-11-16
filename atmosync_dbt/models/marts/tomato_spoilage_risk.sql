@@ -1,3 +1,4 @@
+
 WITH latest_readings AS (
     SELECT
         CONTAINER_ID,
@@ -18,6 +19,13 @@ SELECT
     TEMPERATURE_C,
     HUMIDITY_PERCENT,
     IS_SIMULATED,
+
+    LEAST(
+        100,
+        GREATEST(0, (TEMPERATURE_C - 10) * 5) +
+        GREATEST(0, (HUMIDITY_PERCENT - 80) * 2)
+    ) AS DEMO_SPOILAGE_RISK_SCORE,
+
     CASE
         WHEN TEMPERATURE_C > 15 OR HUMIDITY_PERCENT > 90
             THEN 'HIGH'
@@ -25,5 +33,6 @@ SELECT
             THEN 'MEDIUM'
         ELSE 'LOW'
     END AS DEMO_SPOILAGE_RISK
+
 FROM latest_readings
 WHERE RN = 1
