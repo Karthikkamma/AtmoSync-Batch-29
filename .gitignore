@@ -220,3 +220,11 @@ __marimo__/
 .streamlit/secrets.toml
 .env
 
+
+superset/.env
+
+superset/.env
+superset/snowflake_auth.py
+superset/superset_config.py
+and climate risk models*
+dataset/raw/historical_tomato.csv
