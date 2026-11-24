@@ -1,4 +1,4 @@
-﻿
+
 import json
 import os
 from pathlib import Path
@@ -8,9 +8,10 @@ import snowflake.connector
 from dotenv import load_dotenv
 from cryptography.hazmat.primitives import serialization
 
+# Load environment variables from .env
 load_dotenv()
 
-# Locate the dataset relative to the project folder.
+# Locate the agricultural price dataset
 dataset_path = (
     Path(__file__).resolve().parent.parent
     / "dataset"
@@ -18,16 +19,20 @@ dataset_path = (
     / "price_records.jsonl"
 )
 
-# Load the Snowflake RSA private key.
+# Locate the Snowflake RSA private key
 key_path = Path.home() / ".snowflake" / "keys" / "rsa_key.p8"
+
+# Ask for the private-key passphrase
 passphrase = getpass("Enter your Snowflake private-key passphrase: ")
 
+# Load the private key
 with open(key_path, "rb") as key_file:
     private_key = serialization.load_pem_private_key(
         key_file.read(),
         password=passphrase.encode()
     )
 
+# Connect to Snowflake
 connection = snowflake.connector.connect(
     account=os.getenv("SNOWFLAKE_ACCOUNT"),
     user=os.getenv("SNOWFLAKE_USER"),
@@ -39,9 +44,12 @@ connection = snowflake.connector.connect(
 
 try:
     with connection.cursor() as cursor:
+
+        # Check whether the table already contains records
         cursor.execute(
             "SELECT COUNT(*) FROM ATMOSYNC_DB.RAW.AGRICULTURAL_PRICES"
         )
+
         existing_count = cursor.fetchone()[0]
 
         if existing_count != 0:
@@ -49,7 +57,9 @@ try:
                 f"Table already has {existing_count} records. "
                 "Skipping import to prevent duplicates."
             )
+
         else:
+            # Read agricultural price records from JSONL
             with open(dataset_path, "r", encoding="utf-8") as file:
                 records = [
                     (json.dumps(json.loads(line)),)
@@ -59,18 +69,24 @@ try:
 
             print(f"Loaded {len(records)} records from JSONL.")
 
+            # Insert JSON into the Snowflake VARIANT column
             insert_sql = """
                 INSERT INTO ATMOSYNC_DB.RAW.AGRICULTURAL_PRICES (RECORD)
                 SELECT PARSE_JSON(%s)
             """
 
+            # Insert records one at a time
             for record in records:
                 cursor.execute(insert_sql, record)
 
+            # Commit after all records have been inserted
             connection.commit()
 
-            print(f"Inserted {len(records)} agricultural price records.")
-
+            print(
+                f"Inserted {len(records)} agricultural price records."
+            )
 
 finally:
+    # Always close the Snowflake connection
     connection.close()
+
