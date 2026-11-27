@@ -1,0 +1,159 @@
+slice_name: Top 10 Tomato Markets by Average Modal Price
+description: null
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_bar
+params:
+  datasource: 3__table
+  viz_type: echarts_timeseries_bar
+  matrixify_enable: false
+  matrixify_mode_columns: disabled
+  matrixify_dimension_selection_mode_columns: members
+  matrixify_dimension_columns:
+    dimension: ''
+    values: []
+  matrixify_topn_value_columns: 10
+  matrixify_all_sort_by_columns: a_to_z
+  matrixify_topn_order_columns: true
+  matrixify_show_column_headers: true
+  matrixify_fit_columns_dynamically: true
+  matrixify_mode_rows: disabled
+  matrixify_dimension_selection_mode_rows: members
+  matrixify_dimension_rows:
+    dimension: ''
+    values: []
+  matrixify_topn_value_rows: 10
+  matrixify_all_sort_by_rows: a_to_z
+  matrixify_topn_order_rows: true
+  matrixify_show_row_labels: true
+  matrixify_row_height: 300
+  matrixify_charts_per_row: 4
+  matrixify_cell_title_template: ''
+  x_axis: MARKET
+  time_grain_sqla: P1D
+  xAxisForceCategorical: false
+  x_axis_sort: AVG(AVG_MODAL_PRICE)
+  x_axis_sort_asc: false
+  metrics:
+  - expressionType: SIMPLE
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: AVG_MODAL_PRICE
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 20
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: FLOAT
+      type_generic: 0
+      uuid: 4d3b9a54-45b5-4d3a-87d4-dd8381826f6e
+      verbose_name: null
+      warning_markdown: null
+    aggregate: AVG
+    sqlExpression: null
+    datasourceWarning: false
+    hasCustomLabel: false
+    label: AVG(AVG_MODAL_PRICE)
+    optionName: metric_xjaq5refne_yee9jr9vyx
+  groupby: []
+  adhoc_filters:
+  - expressionType: SIMPLE
+    subject: COMMODITY
+    operator: IN
+    operatorId: IN
+    comparator:
+    - Tomato
+    clause: WHERE
+    sqlExpression: null
+    isExtra: false
+    isNew: false
+    datasourceWarning: false
+    filterOptionName: filter_vggzavxul9o_610gfwqf7bk
+  group_others_when_limit_reached: false
+  timeseries_limit_metric:
+    expressionType: SIMPLE
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: AVG_MODAL_PRICE
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 20
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: column
+      type_generic: 0
+      uuid: 4d3b9a54-45b5-4d3a-87d4-dd8381826f6e
+      verbose_name: null
+      warning_markdown: null
+    aggregate: AVG
+    sqlExpression: null
+    datasourceWarning: false
+    hasCustomLabel: false
+    label: AVG(AVG_MODAL_PRICE)
+    optionName: metric_cdi2xsqy3bh_bz7lhqohobw
+  order_desc: true
+  row_limit: 10
+  truncate_metric: true
+  show_empty_columns: true
+  comparison_type: values
+  annotation_layers: []
+  forecastEnabled: false
+  forecastPeriods: 10
+  forecastInterval: 0.8
+  orientation: vertical
+  x_axis_title: ''
+  x_axis_title_margin: 0
+  y_axis_title: Average Modal Price
+  y_axis_title_margin: 30
+  y_axis_title_position: Left
+  sort_series_type: sum
+  sort_series_ascending: false
+  color_scheme: supersetColors
+  time_shift_color: true
+  show_value: true
+  only_total: true
+  percentage_threshold: 0
+  color_by_primary_axis: false
+  minorTicks: false
+  zoomable: false
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  x_axis_time_format: smart_date
+  x_axis_number_format: ~g
+  xAxisLabelRotation: 45
+  xAxisLabelInterval: auto
+  y_axis_format: SMART_NUMBER
+  logAxis: false
+  minorSplitLine: false
+  truncateYAxis: false
+  y_axis_bounds:
+  - null
+  - null
+  truncateXAxis: true
+  force_max_interval: false
+  rich_tooltip: true
+  showTooltipTotal: true
+  showTooltipPercentage: false
+  tooltipSortByMetric: false
+  tooltipTimeFormat: smart_date
+  echart_options: '{}'
+  extra_form_data: {}
+  dashboards:
+  - 1
+query_context: '{"datasource":{"id":3,"type":"table"},"force":false,"queries":[{"filters":[{"col":"COMMODITY","op":"IN","val":["Tomato"]}],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":[{"timeGrain":"P1D","columnType":"BASE_AXIS","sqlExpression":"MARKET","label":"MARKET","expressionType":"SQL","isColumnReference":true}],"metrics":[{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"AVG_MODAL_PRICE","description":null,"expression":null,"filterable":true,"groupby":true,"id":20,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"FLOAT","type_generic":0,"uuid":"4d3b9a54-45b5-4d3a-87d4-dd8381826f6e","verbose_name":null,"warning_markdown":null},"aggregate":"AVG","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"AVG(AVG_MODAL_PRICE)","optionName":"metric_xjaq5refne_yee9jr9vyx"}],"orderby":[[{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"AVG_MODAL_PRICE","description":null,"expression":null,"filterable":true,"groupby":true,"id":20,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"column","type_generic":0,"uuid":"4d3b9a54-45b5-4d3a-87d4-dd8381826f6e","verbose_name":null,"warning_markdown":null},"aggregate":"AVG","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"AVG(AVG_MODAL_PRICE)","optionName":"metric_cdi2xsqy3bh_bz7lhqohobw"},false]],"annotation_layers":[],"row_limit":10,"series_columns":[],"series_limit":0,"series_limit_metric":{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"AVG_MODAL_PRICE","description":null,"expression":null,"filterable":true,"groupby":true,"id":20,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"column","type_generic":0,"uuid":"4d3b9a54-45b5-4d3a-87d4-dd8381826f6e","verbose_name":null,"warning_markdown":null},"aggregate":"AVG","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"AVG(AVG_MODAL_PRICE)","optionName":"metric_cdi2xsqy3bh_bz7lhqohobw"},"group_others_when_limit_reached":false,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"time_offsets":[],"post_processing":[{"operation":"pivot","options":{"index":["MARKET"],"columns":[],"aggregates":{"AVG(AVG_MODAL_PRICE)":{"operator":"mean"}},"drop_missing_columns":false}},{"operation":"sort","options":{"by":"AVG(AVG_MODAL_PRICE)","ascending":false}},{"operation":"flatten"}]}],"form_data":{"datasource":"3__table","viz_type":"echarts_timeseries_bar","matrixify_enable":false,"matrixify_mode_columns":"disabled","matrixify_dimension_selection_mode_columns":"members","matrixify_dimension_columns":{"dimension":"","values":[]},"matrixify_topn_value_columns":10,"matrixify_all_sort_by_columns":"a_to_z","matrixify_topn_order_columns":true,"matrixify_show_column_headers":true,"matrixify_fit_columns_dynamically":true,"matrixify_mode_rows":"disabled","matrixify_dimension_selection_mode_rows":"members","matrixify_dimension_rows":{"dimension":"","values":[]},"matrixify_topn_value_rows":10,"matrixify_all_sort_by_rows":"a_to_z","matrixify_topn_order_rows":true,"matrixify_show_row_labels":true,"matrixify_row_height":300,"matrixify_charts_per_row":4,"matrixify_cell_title_template":"","x_axis":"MARKET","time_grain_sqla":"P1D","xAxisForceCategorical":false,"x_axis_sort":"AVG(AVG_MODAL_PRICE)","x_axis_sort_asc":false,"metrics":[{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"AVG_MODAL_PRICE","description":null,"expression":null,"filterable":true,"groupby":true,"id":20,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"FLOAT","type_generic":0,"uuid":"4d3b9a54-45b5-4d3a-87d4-dd8381826f6e","verbose_name":null,"warning_markdown":null},"aggregate":"AVG","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"AVG(AVG_MODAL_PRICE)","optionName":"metric_xjaq5refne_yee9jr9vyx"}],"groupby":[],"adhoc_filters":[{"expressionType":"SIMPLE","subject":"COMMODITY","operator":"IN","operatorId":"IN","comparator":["Tomato"],"clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_vggzavxul9o_610gfwqf7bk"}],"group_others_when_limit_reached":false,"timeseries_limit_metric":{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"AVG_MODAL_PRICE","description":null,"expression":null,"filterable":true,"groupby":true,"id":20,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"column","type_generic":0,"uuid":"4d3b9a54-45b5-4d3a-87d4-dd8381826f6e","verbose_name":null,"warning_markdown":null},"aggregate":"AVG","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"AVG(AVG_MODAL_PRICE)","optionName":"metric_cdi2xsqy3bh_bz7lhqohobw"},"order_desc":true,"row_limit":10,"truncate_metric":true,"show_empty_columns":true,"comparison_type":"values","annotation_layers":[],"forecastEnabled":false,"forecastPeriods":10,"forecastInterval":0.8,"orientation":"vertical","x_axis_title":"","x_axis_title_margin":0,"y_axis_title":"Average
+  Modal Price","y_axis_title_margin":30,"y_axis_title_position":"Left","sort_series_type":"sum","sort_series_ascending":false,"color_scheme":"supersetColors","time_shift_color":true,"show_value":true,"only_total":true,"percentage_threshold":0,"color_by_primary_axis":false,"minorTicks":false,"zoomable":false,"show_legend":true,"legendType":"scroll","legendOrientation":"top","x_axis_time_format":"smart_date","x_axis_number_format":"~g","xAxisLabelRotation":45,"xAxisLabelInterval":"auto","y_axis_format":"SMART_NUMBER","logAxis":false,"minorSplitLine":false,"truncateYAxis":false,"y_axis_bounds":[null,null],"truncateXAxis":true,"force_max_interval":false,"rich_tooltip":true,"showTooltipTotal":true,"showTooltipPercentage":false,"tooltipSortByMetric":false,"tooltipTimeFormat":"smart_date","echart_options":"{}","extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: c7a13aa8-94c7-4468-84b0-c67142ff1562
+version: 1.0.0
+dataset_uuid: 2531b297-4551-4a8f-b34e-891d9b264184

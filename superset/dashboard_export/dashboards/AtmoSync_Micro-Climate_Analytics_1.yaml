@@ -105,6 +105,20 @@ position:
     - GRID_ID
     - ROW-2QeeUGf22x7uOIVr9NTba
     type: CHART
+  CHART-explore-8-1:
+    children: []
+    id: CHART-explore-8-1
+    meta:
+      chartId: 8
+      height: 50
+      sliceName: Top 10 Tomato Markets by Average Modal Price
+      uuid: c7a13aa8-94c7-4468-84b0-c67142ff1562
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-nlY9GrZdEvvsOtxZn4laR
+    type: CHART
   DASHBOARD_VERSION_KEY: v2
   GRID_ID:
     children:
@@ -115,6 +129,9 @@ position:
     - HEADER-Dnrv4-HdJU3MfiB0Bv7Cc
     - ROW-HuxNX_MCHfnXBYN35mgi6
     - ROW-2QeeUGf22x7uOIVr9NTba
+    - HEADER-ovZbJ8LWkz-WiQRFY80zO
+    - ROW-OGdhLOHNOmjsDbX7A8d_4
+    - ROW-nlY9GrZdEvvsOtxZn4laR
     id: GRID_ID
     parents:
     - ROOT_ID
@@ -141,11 +158,37 @@ position:
     - ROOT_ID
     - GRID_ID
     type: HEADER
+  HEADER-ovZbJ8LWkz-WiQRFY80zO:
+    children: []
+    id: HEADER-ovZbJ8LWkz-WiQRFY80zO
+    meta:
+      background: BACKGROUND_TRANSPARENT
+      headerSize: MEDIUM_HEADER
+      text: 03 | Market Arbitrage Analytics
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: HEADER
   HEADER_ID:
     id: HEADER_ID
     meta:
       text: AtmoSync Micro-Climate Analytics
     type: HEADER
+  MARKDOWN-87hI5jMkm0ONAjj72EDw4:
+    children: []
+    id: MARKDOWN-87hI5jMkm0ONAjj72EDw4
+    meta:
+      code: Compare historical tomato prices across agricultural markets to identify
+        potential market arbitrage opportunities. Higher average modal prices indicate
+        potential selling markets, but actual profitability depends on transportation
+        costs, spoilage risk and market conditions.
+      height: 10
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-OGdhLOHNOmjsDbX7A8d_4
+    type: MARKDOWN
   MARKDOWN-KRJRRFTaIY68ZNixN8lMa:
     children: []
     id: MARKDOWN-KRJRRFTaIY68ZNixN8lMa
@@ -212,10 +255,30 @@ position:
     - ROOT_ID
     - GRID_ID
     type: ROW
+  ROW-OGdhLOHNOmjsDbX7A8d_4:
+    children:
+    - MARKDOWN-87hI5jMkm0ONAjj72EDw4
+    id: ROW-OGdhLOHNOmjsDbX7A8d_4
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
   ROW-f9E9C35Cb6joSbhuJHhOT:
     children:
     - MARKDOWN-T55qyO6bR64u2T02oaYfB
     id: ROW-f9E9C35Cb6joSbhuJHhOT
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-nlY9GrZdEvvsOtxZn4laR:
+    children:
+    - CHART-explore-8-1
+    id: ROW-nlY9GrZdEvvsOtxZn4laR
     meta:
       background: BACKGROUND_TRANSPARENT
     parents:
@@ -237,13 +300,10 @@ position:
 metadata:
   color_scheme_domain: []
   shared_label_colors:
-  - AVG(TEMPERATURE_C)
   - AVG(HUMIDITY_PERCENT)
+  - AVG(TEMPERATURE_C)
   map_label_colors:
-    AVG(DEMO_SPOILAGE_RISK_SCORE): '#1FA8C9'
-    AVG(TEMPERATURE_C): '#1FA8C9'
-    AVG(HUMIDITY_PERCENT): '#1FA8C9'
-    MAX_BY(TEMPERATURE_C, EVENT_TIMESTAMP): '#1FA8C9'
+    AVG(AVG_MODAL_PRICE): '#1FA8C9'
   label_colors: {}
   chart_configuration:
     '2':
@@ -257,6 +317,7 @@ metadata:
         - 5
         - 6
         - 7
+        - 8
     '3':
       id: 3
       crossFilters:
@@ -268,6 +329,7 @@ metadata:
         - 5
         - 6
         - 7
+        - 8
     '4':
       id: 4
       crossFilters:
@@ -279,6 +341,7 @@ metadata:
         - 5
         - 6
         - 7
+        - 8
     '5':
       id: 5
       crossFilters:
@@ -290,6 +353,7 @@ metadata:
         - 4
         - 6
         - 7
+        - 8
     '6':
       id: 6
       crossFilters:
@@ -301,6 +365,7 @@ metadata:
         - 4
         - 5
         - 7
+        - 8
     '7':
       id: 7
       crossFilters:
@@ -312,6 +377,19 @@ metadata:
         - 4
         - 5
         - 6
+        - 8
+    '8':
+      id: 8
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
   global_chart_configuration:
     scope:
       rootPath:
@@ -325,6 +403,7 @@ metadata:
     - 5
     - 6
     - 7
+    - 8
   native_filter_configuration: []
   chart_customization_config: []
   timed_refresh_immune_slices: []
