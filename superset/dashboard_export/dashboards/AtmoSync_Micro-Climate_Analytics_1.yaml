@@ -119,6 +119,20 @@ position:
     - GRID_ID
     - ROW-nlY9GrZdEvvsOtxZn4laR
     type: CHART
+  CHART-explore-9-1:
+    children: []
+    id: CHART-explore-9-1
+    meta:
+      chartId: 9
+      height: 50
+      sliceName: Top 10 States by Historical Tomato Price Spread
+      uuid: ba3227e8-e9cd-41bb-97e8-69abb3e4fa9d
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-z4uC5pLuzgKwQA_YlfTSH
+    type: CHART
   DASHBOARD_VERSION_KEY: v2
   GRID_ID:
     children:
@@ -132,6 +146,9 @@ position:
     - HEADER-ovZbJ8LWkz-WiQRFY80zO
     - ROW-OGdhLOHNOmjsDbX7A8d_4
     - ROW-nlY9GrZdEvvsOtxZn4laR
+    - HEADER-UCeA-SeUnp86Nb5dl1ghm
+    - ROW-VzhZ1_z8kqpt1xs6Ptw9g
+    - ROW-z4uC5pLuzgKwQA_YlfTSH
     id: GRID_ID
     parents:
     - ROOT_ID
@@ -154,6 +171,17 @@ position:
       background: BACKGROUND_TRANSPARENT
       headerSize: MEDIUM_HEADER
       text: 01 | Container Climate Monitoring
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: HEADER
+  HEADER-UCeA-SeUnp86Nb5dl1ghm:
+    children: []
+    id: HEADER-UCeA-SeUnp86Nb5dl1ghm
+    meta:
+      background: BACKGROUND_TRANSPARENT
+      headerSize: MEDIUM_HEADER
+      text: 04 | State-Level Tomato Price Spread Analytics
     parents:
     - ROOT_ID
     - GRID_ID
@@ -188,6 +216,26 @@ position:
     - ROOT_ID
     - GRID_ID
     - ROW-OGdhLOHNOmjsDbX7A8d_4
+    type: MARKDOWN
+  MARKDOWN-IwPDJGpl49db7xSU487C4:
+    children: []
+    id: MARKDOWN-IwPDJGpl49db7xSU487C4
+    meta:
+      code: 'Analyze historical tomato price differences across agricultural markets
+        within each state to identify potential arbitrage opportunities. The price
+        spread represents the difference between the highest and lowest average market
+        prices. A provisional threshold of 100 excludes unusually low market averages.
+        These historical price spreads indicate potential opportunities, not actual
+        profits, as transportation costs, spoilage risk and market conditions must
+        also be considered.
+
+        '
+      height: 16
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-VzhZ1_z8kqpt1xs6Ptw9g
     type: MARKDOWN
   MARKDOWN-KRJRRFTaIY68ZNixN8lMa:
     children: []
@@ -265,6 +313,16 @@ position:
     - ROOT_ID
     - GRID_ID
     type: ROW
+  ROW-VzhZ1_z8kqpt1xs6Ptw9g:
+    children:
+    - MARKDOWN-IwPDJGpl49db7xSU487C4
+    id: ROW-VzhZ1_z8kqpt1xs6Ptw9g
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
   ROW-f9E9C35Cb6joSbhuJHhOT:
     children:
     - MARKDOWN-T55qyO6bR64u2T02oaYfB
@@ -297,13 +355,28 @@ position:
     - ROOT_ID
     - GRID_ID
     type: ROW
+  ROW-z4uC5pLuzgKwQA_YlfTSH:
+    children:
+    - CHART-explore-9-1
+    id: ROW-z4uC5pLuzgKwQA_YlfTSH
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
 metadata:
   color_scheme_domain: []
   shared_label_colors:
   - AVG(HUMIDITY_PERCENT)
   - AVG(TEMPERATURE_C)
   map_label_colors:
+    AVG(HUMIDITY_PERCENT): '#1FA8C9'
+    AVG(TEMPERATURE_C): '#1FA8C9'
+    MAX_BY(TEMPERATURE_C, EVENT_TIMESTAMP): '#1FA8C9'
+    AVG(DEMO_SPOILAGE_RISK_SCORE): '#1FA8C9'
     AVG(AVG_MODAL_PRICE): '#1FA8C9'
+    MAX(STATE_PRICE_SPREAD): '#1FA8C9'
   label_colors: {}
   chart_configuration:
     '2':
@@ -318,6 +391,7 @@ metadata:
         - 6
         - 7
         - 8
+        - 9
     '3':
       id: 3
       crossFilters:
@@ -330,6 +404,7 @@ metadata:
         - 6
         - 7
         - 8
+        - 9
     '4':
       id: 4
       crossFilters:
@@ -342,6 +417,7 @@ metadata:
         - 6
         - 7
         - 8
+        - 9
     '5':
       id: 5
       crossFilters:
@@ -354,6 +430,7 @@ metadata:
         - 6
         - 7
         - 8
+        - 9
     '6':
       id: 6
       crossFilters:
@@ -366,6 +443,7 @@ metadata:
         - 5
         - 7
         - 8
+        - 9
     '7':
       id: 7
       crossFilters:
@@ -378,6 +456,7 @@ metadata:
         - 5
         - 6
         - 8
+        - 9
     '8':
       id: 8
       crossFilters:
@@ -390,6 +469,20 @@ metadata:
         - 5
         - 6
         - 7
+        - 9
+    '9':
+      id: 9
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
   global_chart_configuration:
     scope:
       rootPath:
@@ -404,6 +497,7 @@ metadata:
     - 6
     - 7
     - 8
+    - 9
   native_filter_configuration: []
   chart_customization_config: []
   timed_refresh_immune_slices: []
